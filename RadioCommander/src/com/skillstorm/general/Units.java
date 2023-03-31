@@ -7,7 +7,8 @@ public abstract class Units {
 	//Morale, Maximum HP/Combat power, HP
 	public int mor;
 	public int max;
-	public int hp; 
+	public int hp;
+	 
 
 	
 	public Units(String name, int mor, int max) {

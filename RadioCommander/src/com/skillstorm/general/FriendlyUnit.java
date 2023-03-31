@@ -7,6 +7,8 @@ public class FriendlyUnit extends Units {
 	public int numHeavy;
 	
 	
+	//additional attributes
+	int cash, restLeft, gres;
 	//Unit skills
 	public String[] airborne = {"Speed", "Raid", "Stealth", "Snipers"};
 	public String[] heavy = {"Armor", "Air Support", "Fire Support", "Stamina increase"};
@@ -17,6 +19,9 @@ public class FriendlyUnit extends Units {
 		//Player will be able to choose
 		this.numAirborne = 0;
 		this.numHeavy = 0; 
+		this.cash = 5;
+		this.restLeft = 1;
+		this.gres = 0;
 		chooseSkill(); 
 	
 	}
@@ -24,13 +29,13 @@ public class FriendlyUnit extends Units {
 	@Override
 	public int attack() {
 		// TODO Auto-generated method stub
-		return 0;
+		return (int) (Math.random() * (mor/3 + numAirborne * 3 + 2) + mor/5 + numAirborne * 2 + numHeavy + 7);
 	}
 
 	@Override
 	public int defense() {
 		// TODO Auto-generated method stub
-		return 0;
+		return (int) (Math.random() * (mor/3 + numHeavy * 3 + 2) + mor/5 + numHeavy * 2 + numAirborne + 7);
 	}
 	
    public void chooseSkill() {
